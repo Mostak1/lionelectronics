@@ -1,0 +1,20 @@
+{
+    "name": "sarke/lionelectronics",
+    "description": "php mysql based single vendor ecommerce",
+    "type": "project",
+    "license": "gnu",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Admin\\": "admin/"
+        },
+        "files": ["src/settings.php"]
+    },
+    "authors": [
+        {
+            "name": "Mostak1",
+            "email": "114609802+Mostak1@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
