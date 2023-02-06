@@ -1,27 +1,23 @@
-
 <?php
 if (!function_exists('settings')) {
-
     function settings()
     {
+       $root = "http://localhost/WDPF/Project/lionelectronics/"; 
         return [
-            'companyname' => 'Lion Electronics Corporation',
-            'homepage' => 'http://localhost/WDPF/Project/lionelectronics/',
-            'hostname' => 'localhost',
-            'user' => 'root',
-            'password' => '',
-            'database' => 'lioncommerce',
-
+            'companyname'=> 'Electroquantam',
+            'logo'=>$root."admin/assets/img/logo.svg",
+            'homepage'=> $root,
+            'adminpage'=>$root.'admin/',
+            'hostname'=> 'localhost',
+            'user'=> 'root',
+            'password'=> '',
+            'database'=> 'lioncommerce'
         ];
     }
 }
 if (!function_exists('testfunc')) {
-
     function testfunc()
     {
-        return "<hr> testing common function in settings";
+        return "<h3>testing common functions</h3>";
     }
 }
-
-
-?>

@@ -1,7 +1,7 @@
 <?php
 namespace App;
-class user{
+class User{
     public function testme(){
-        return "testme called with class";
+        return "testme called<br>";
     }
 }

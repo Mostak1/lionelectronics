@@ -1,12 +1,12 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+// if (session_status() === PHP_SESSION_NONE) {
+//     session_start();
 
-}
-if(!$_SESSION['loggedin']){
-    header('location:login.php');
-}
+// }
+// if(!$_SESSION['loggedin']){
+//     header('location:login.php');
+// }
 $page = "Home";
 
 ?>
@@ -17,15 +17,21 @@ use App\model\category;
 use App\db;
 $conn = db::connect();
 ?>
-<!-------- Header start---- -->
+<!-- connetion  -->
+<!--------HTML Header start---- -->
         <?php
         require __DIR__ . '/components/header.php';
         ?>
 
-<!-------- Header end---- -->
+<!--------HTML Header end---- -->
 </head>
 <body>
     <!-------- body start---- -->
+    <!-- bodyheader  -->
+    <?php
+        require __DIR__ . '/components/bodyheader.html';
+        ?>
+    <!-- bodyheader  -->
    <!-- manubar -->
    <?php
         require __DIR__ . '/components/menubar.php';
@@ -58,7 +64,7 @@ echo "<h1>Total users $r->num_rows </h1>";
 <!-------- body end---- -->
 <!-------- footer---- -->
     <?php
-        require __DIR__ . '/components/header.php';
+        require __DIR__ . '/components/footer.php';
         $conn->close();
     ?>
 
