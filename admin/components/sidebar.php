@@ -21,8 +21,13 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">All</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Add</a>
+                                    <a class="nav-link" href="<?= settings()['adminpage'] ?>/brand/bdisplay.php">Brands</a>
+                                    <a class="nav-link" href="<?= settings()['adminpage'] ?>/brand/bdisplay.php">Categories</a>
+                                    <a class="nav-link" href="<?= settings()['adminpage'] ?>/brand/bdisplay.php">Order Details</a>
+                                    <a class="nav-link" href="<?= settings()['adminpage'] ?>/brand/bdisplay.php">Orders</a>
+                                    <a class="nav-link" href="<?= settings()['adminpage'] ?>/product/pdisplay.php">Products</a>
+                                    <a class="nav-link" href="<?= settings()['adminpage'] ?>/brand/bdisplay.php">Subcategories</a>
+                                    <a class="nav-link" href="<?= settings()['adminpage'] ?>/brand/bdisplay.php">Users</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">

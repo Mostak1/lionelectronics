@@ -45,14 +45,7 @@ $r= $conn->query("SELECT * FROM users WHERE 1");
 echo "<h1>Total users $r->num_rows </h1>";
    ?>
    <hr>
-   <?php
-        
-        $u= new user();
-        echo $u->testme();
-
-
-        echo Category::testing();
-?>
+  
 
 
 

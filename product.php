@@ -12,9 +12,11 @@ $page = "Product";
 ?>
 <!-- connetion  -->
 <?php
+
 use App\user;
 use App\model\category;
 use App\db;
+
 $conn = db::connect();
 ?>
 <!-- connetion  -->
@@ -40,28 +42,28 @@ $result = $conn->query($selectQuery);
 <!-------------------------------- HTML Start------------------------- -->
 <!--------HTML Header start---- -->
 <?php
-        require __DIR__ . '/components/header.php';
-        ?>
+require __DIR__ . '/components/header.php';
+?>
 
 <!--------HTML Header end---- -->
-    <style>
-       
-    </style>
+<style>
+
+</style>
 </head>
 
 <body>
     <!-------------------------------- navbar -------------------------------------------->
     <!-- bodyheader  -->
     <?php
-        require __DIR__ . '/components/bodyheader.html';
-        ?>
+    require __DIR__ . '/components/bodyheader.html';
+    ?>
     <!-- bodyheader  -->
-   <!-- manubar -->
-   <?php
-        require __DIR__ . '/components/menubar.php';
-        ?>
-   
-   <!-- manubar end -->
+    <!-- manubar -->
+    <?php
+    require __DIR__ . '/components/menubar.php';
+    ?>
+
+    <!-- manubar end -->
 
 
     <!-------------------------------- navbar -------------------------------------------->
@@ -80,14 +82,38 @@ $result = $conn->query($selectQuery);
 
                     ?>
                             <div class="col">
-                                <div class="card h-100 shadow-sm"> <img src="productimg/<?= $res['images'] ?>" class="card-img-top" alt="...">
-                                    <div class="label-top shadow-sm"><?= $res['name'] ?? "" ?></div>
+                                <div class="card h-100  shadow-sm">
+                                    <div class="cardsimg">
+
+                                        <img src="productimg/<?= $res['images'] ?>" class="card-img-top" alt="...">
+                                    </div>
+                                    <div class="label-top shadow-sm">
+                                        <?= $res['name'] ?? "" ?>
+                                    </div>
                                     <div class="card-body">
-                                        <div class="clearfix mb-3"> <span class="float-start badge rounded-pill bg-success"><?= $res['price'] ?? "" ?>&euro;</span> <span class="float-end"><a href="#" class="small text-muted"><?= $res['discount'] ?? "" ?></a></span> </div>
-                                        <h5 class="card-title"><?= $res['description'] ?? "" ?>
+                                        <div class="clearfix mb-3">
+                                            <span class="float-start badge rounded-pill bg-success"><?= $res['price'] ?? "" ?>TK
+                                            </span>
+                                            <span class="float-end">
+                                                <a href="#" class="small text-muted">
+                                                    <?= $res['discount'] ?? "" ?>
+                                                </a>
+                                            </span>
+                                        </div>
+                                        <h5 class="card-title">
+                                            <?= $res['description'] ?? "" ?>
                                         </h5>
-                                        <div class="text-center my-4"> <a href="#" class="btn btn-warning"> Details </a> </div>
-                                        <div class="clearfix mb-1"> <span class="float-start"><i class="far fa-question-circle"></i></span> <span class="float-end"><i class="fas fa-plus"></i></span> </div>
+                                        <div class="text-center my-4">
+                                            <a href="#" class="btn btn-warning"> Details </a>
+                                        </div>
+                                        <div class="clearfix mb-1">
+                                            <span class="float-start">
+                                                <i class="far fa-question-circle"></i>
+                                            </span>
+                                            <span class="float-end">
+                                                <i class="fas fa-plus"></i>
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -101,9 +127,9 @@ $result = $conn->query($selectQuery);
             </div>
             <!-- pageinnetions form -->
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
+                <ul class="pagination justify-content-center ">
                     <li class="page-item">
-                        <a class="page-link" href="?page=1">Start</a>
+                        <a class="page-link " href="?page=1">Start</a>
                     </li>
                     <li class="page-item <?= ($pagenum <= 1) ? 'disabled' : ''; ?>">
                         <a class="page-link" href="?page=<?= $pagenum - 1; ?>">Previous</a>
@@ -162,13 +188,13 @@ $result = $conn->query($selectQuery);
                     <div class="sidebar-heading">
                         <h3> Price</h3>
                     </div>
-                    <ul class="category-list">
-                        <li><i class="fa-solid me-2 fa-caret-right"></i><a href="">$5000 - $10000</a></li>
-                        <li><i class="fa-solid me-2 fa-caret-right"></i><a href="">$10000 - $15000</a></li>
-                        <li><i class="fa-solid me-2 fa-caret-right"></i><a href="">$15000 - $20000</a></li>
-                        <li><i class="fa-solid me-2 fa-caret-right"></i><a href="">$20000 - $25000</a></li>
-                        <li><i class="fa-solid me-2 fa-caret-right"></i><a href="">$25000 - $30000</a></li>
-                        <li><i class="fa-solid me-2 fa-caret-right"></i><a href="">$30000+</a></li>
+                    <ul class="category-list ">
+                        <li><i class="fa-solid me-2 fa-caret-right"></i><a class="fs-6" href="">$5000-$10000</a></li>
+                        <li><i class="fa-solid me-2 fa-caret-right"></i><a class="fs-6" href="">$10000-$15000</a></li>
+                        <li><i class="fa-solid me-2 fa-caret-right"></i><a class="fs-6" href="">$15000-$20000</a></li>
+                        <li><i class="fa-solid me-2 fa-caret-right"></i><a class="fs-6" href="">$20000-$25000</a></li>
+                        <li><i class="fa-solid me-2 fa-caret-right"></i><a class="fs-6" href="">$25000-$30000</a></li>
+                        <li><i class="fa-solid me-2 fa-caret-right"></i><a class="fs-6" href="">$30000+</a></li>
                     </ul>
                 </div>
 
@@ -186,9 +212,8 @@ $result = $conn->query($selectQuery);
 
 
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
-</body>
-
-</html>
+    <!-------- footer---- -->
+    <?php
+    require __DIR__ . '/components/footer.php';
+    $conn->close();
+    ?>

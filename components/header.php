@@ -8,6 +8,7 @@
     <title><?= settings()['companyname'] ?>-<?= $page ?></title>
     <link rel="stylesheet" href="<?= settings()['homepage'] ?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= settings()['homepage'] ?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?= settings()['homepage'] ?>/assets/css/footer.css">
     <!-- google font  -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
     <!-- Font Awesome Icon -->

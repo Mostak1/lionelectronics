@@ -1,0 +1,64 @@
+/* footer css start */
+#foot {
+    width: 100%;
+    height: 450px;
+    background-color: black;
+}
+
+#foot h4 {
+    color: white;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+#foot  h4::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background-color: red;
+    transition: .5s;
+}
+
+#foot h4:hover::after {
+    width: 50%;
+
+}
+#foot  p {
+    color: white;
+}
+
+#foot i {
+    color: red;
+
+}
+#foot .icon {
+    margin-bottom: 8px;
+}
+#foot .f_text:hover {
+    color: red;
+}
+#foot .f_text {
+    color: white;
+    margin-left: 7px;
+}
+#foot li a {
+    text-decoration: none;
+    color: white;
+}
+#foot li a:hover {
+    color: red;
+}
+#foot ul li {
+    margin-bottom: 10px;
+}
+#foot input[type="search"] {
+    width: 70%;
+}
+#foot form{
+    margin-top: 15px;
+}
+
+/* footer css end */

@@ -2,16 +2,16 @@
 if (!function_exists('settings')) {
     function settings()
     {
-       $root = "http://localhost/WDPF/Project/lionelectronics/"; 
+       $root = "http://localhost/WDPF/Project/electro_master/"; 
         return [
-            'companyname'=> 'Electroquantam',
+            'companyname'=> 'Electro Master',
             'logo'=>$root."admin/assets/img/logo.svg",
             'homepage'=> $root,
             'adminpage'=>$root.'admin/',
             'hostname'=> 'localhost',
             'user'=> 'root',
             'password'=> '',
-            'database'=> 'lioncommerce'
+            'database'=> 'electro_master'
         ];
     }
 }
