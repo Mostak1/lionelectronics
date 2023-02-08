@@ -2,7 +2,8 @@
 if (!function_exists('settings')) {
     function settings()
     {
-       $root = "http://localhost/WDPF/Project/electro_master/"; 
+    //    $root = "http://localhost/WDPF/Project/electro_master/"; 
+       $root = "http://localhost/WDPF53/electro_master/"; 
         return [
             'companyname'=> 'Electro Master',
             'logo'=>$root."admin/assets/img/logo.svg",

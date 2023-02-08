@@ -1,11 +1,10 @@
 <!-- footer start  -->
-<div class="footer bg-secondary text-white">
+<div id="foot" class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 offset-md-3 mb-3 pt-3">
                     <form class="d-flex aligns-item-center" action="" method="post">
                       <div class="input-group">
-
                         <input class="form-control border-danger" type="search" name="search" placeholder="Search">
                         <input class="btn btn-danger" type="submit" name="sub" value="Search">
                       </div>
