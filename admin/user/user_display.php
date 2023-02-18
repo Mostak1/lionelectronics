@@ -27,21 +27,24 @@ $conn = db::connect();
             <!-------------------------- display content start--------------------------- -->
             <div class="container">
                 <button class="btn btn-primary my-5">
-                    <a href="brand_add.php" class="text-decoration-none text-light"> Add Brand</a>
+                    <a href="uadd.php" class="text-decoration-none text-light"> Add User</a>
 
                 </button>
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">Sl</th>
+                            <th scope="col">SL</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Date</th>
-                            <th scope="col" colspan="2">Operations</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Role</th>
+                            <th colspan="3" scope="col">Operations</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $sql = "select * from `brands` where 1";
+                        
+                        $sql = "select * from `users` where 1";
                         // $result = $con->query($sql);
                         $result = $conn->query($sql);
                         if ($result) {
@@ -50,19 +53,23 @@ $conn = db::connect();
                             while ($row = $result->fetch_assoc()) {
                                 $id = $row['id'];
                                 $name = $row['name'];
-                                $date = $row['created_at'];
+                                $email = $row['email'];
+                                $pass = $row['password'];
+                                $role = $row['role'];
                                 echo '<tr>
-          <th scope="row">' . $id . '</th>
-          <td>' . $name . '</td>
-          <td>' . $date . '</td>
-            <td>
-                <a class=" btn btn-primary text-light text-decoration-none" href="brand_update.php?updateid=' . $id . '">Update</a>
-            </td>
-            <td>
-                <a class="btn btn-primary text-light text-decoration-none" href="brand_delete.php?deleteid=' . $id . '">Delete</a>
-          
-            </td>
-        </tr>';
+                                        <th scope="row">' . $id . '</th>
+                                        <td>' . $name . '</td>
+                                        <td>' . $email . '</td>
+                                        <td>' . $pass . '</td>
+                                        <td>' . $role . '</td>
+                                        <td>
+                                            <a class="btn btn-outline-primary text-decoration-none" href="user_update.php?updateid=' . $id . '">Edit</a>
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-outline-danger  text-decoration-none" href="user_delete.php?deleteid=' . $id . '">Delete</a>
+                                        
+                                        </td>
+                                    </tr>';
                             }
                         }
 
@@ -70,6 +77,7 @@ $conn = db::connect();
 
                     </tbody>
                 </table>
+
             </div>
             <!-------------------------- display content end--------------------------- -->
 

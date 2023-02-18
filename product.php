@@ -16,7 +16,6 @@ $page = "Product";
 use App\user;
 use App\model\category;
 use App\db;
-
 $conn = db::connect();
 ?>
 <!-- connetion  -->
@@ -55,7 +54,7 @@ require __DIR__ . '/components/header.php';
     <!-------------------------------- navbar -------------------------------------------->
     <!-- bodyheader  -->
     <?php
-    require __DIR__ . '/components/bodyheader.html';
+    require __DIR__ . '/components/bodyheader.php';
     ?>
     <!-- bodyheader  -->
     <!-- manubar -->
@@ -104,7 +103,7 @@ require __DIR__ . '/components/header.php';
                                             <?= $res['description'] ?? "" ?>
                                         </h5>
                                         <div class="text-center my-4">
-                                            <a href="#" class="btn btn-warning"> Details </a>
+                                            <a href="product_details.php?id=<?= $res['id'] ?>" class="btn btn-warning"> Details </a>
                                         </div>
                                         <div class="clearfix mb-1">
                                             <span class="float-start">

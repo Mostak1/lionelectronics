@@ -5,11 +5,11 @@ $conn = db::connect();
 if(isset($_GET['deleteid'])){
 $id=$_GET['deleteid'];
 
-$sql = "delete from `brands` where id = '$id'";
+$sql = "delete from `images` where id = '$id'";
 $result = $conn->query($sql);
 if($result){
     // echo "Deleted successfully";
-header('location:'.settings()['adminpage'].'/brand/brand_display.php');
+header('location:'.settings()['adminpage'].'/image/image_display.php');
 }else{
     die(mysqli_error($conn));
 }

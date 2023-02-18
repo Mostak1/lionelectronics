@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
 
     $imagenm = $image['name'];
 
-    $sql = "UPDATE `products` SET `cat_id`='$cat',`brand_id`='$bid',`manufacturer_id`='$mft',`user_id`='$userid',`title`='$title',`description`='$desc',`dimensions`='$dim',`weight`='$weight',`pprice`='$pprice',`sprice`='$sprice',`discount`='$discount',`images`='$imagenm',`quantity`='$quantity',`hot`='$hot',`options`='$options' WHERE `id`='$id'";
+    $sql = "UPDATE `products` SET `cat_id`='$cat',`brand_id`='$bid',`manufacturer_id`='$mft',`user_id`='$userid',`title`='$title',`description`='$desc',`dimensions`='$dim',`weight`='$weight',`pprice`='$pprice',`sprice`='$sprice',`discount`='$discount',`quantity`='$quantity',`hot`='$hot',`options`='$options' WHERE `id`='$id'";
 
     // echo $sql;
     // exit;

@@ -12,30 +12,40 @@ require __DIR__ . '/../../vendor/autoload.php';
 // }
 
 use App\db;
-
 $conn = db::connect();
 $id = $_GET['updateid'];
 if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
+    $pid = $_POST['p_id'];
+    $title = $_POST['title'];
 
-    $sql = "UPDATE `brands` SET `name`='$name' WHERE `id`='$id'";
 
+    $image = $_FILES['image'];
+
+
+    $imagenm = $image['name'];
+
+    $sql = "UPDATE `images` SET `p_id`='$pid',`name`='$imagenm',`title`='$title' WHERE `id`='$id'";
     // echo $sql;
     // exit;
 
     $result = $conn->query($sql);
     if ($result) {
-        echo "Brand updated successfully";
+        move_uploaded_file($image['tmp_name'], settings()['homepage'] . "productimg/" . $image['name']);
+        echo "Image data inserted";
     } else {
-        echo "data update invalid";
+
+        echo "data inserted invalid";
     }
 }
 // header("Location:add-product.php");
-$sql1 = "select * from `brands` where id=$id";
+$sql1 = "select * from `images` where id=$id";
 $result1 = $conn->query($sql1);
 $row = $result1->fetch_assoc();
+$pid1 = $row['p_id'];
+$title1 = $row['title'];
+$image1 = $row['image'];
 
-$nm = $row['name'];
+
 ?>
 <?php require __DIR__ . '/../components/header.php'; ?>
 
@@ -49,14 +59,24 @@ $nm = $row['name'];
             <!-------------------------- display content start--------------------------- -->
             <div class="container">
                 <div class="row">
-                    <h2>Update Brand From Here</h2>
+                    <h2>Add Product From Here</h2>
                     <form class="my-5" method="post" enctype="multipart/form-data">
-
-                    <input type="number" hidden  name="id" id="" placeholder="<?=$id ?>">
+                        <input type="number" name="" hidden placeholder="<?= $id ?>" id="">
                         <div class="mb-3">
-                            <label for="title" class="form-label">Brand Name:</label>
-                            <input type="text" name="name" class="form-control" id="name" placeholder="<?= $nm ?? "" ?>" required>
+                            <label for="p_id" class="form-label">Product Id:</label>
+                            <input class="form-control" type="number" name="p_id" id="p_id" placeholder="<?=$pid1 ?? "" ?>" required>
                         </div>
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Image:</label>
+                            <input type="file" name="image" id="image" class="form-control" placeholder="<?=$image1 ?? "" ?>">
+                        </div>
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Title:</label>
+                            <input type="text" height="2" name="title" id="title" placeholder="<?=$title1 ?? "" ?>" class="form-control">
+                        </div>
+
+
 
 
 

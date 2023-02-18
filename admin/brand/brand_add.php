@@ -12,8 +12,8 @@ require __DIR__ . '/../../vendor/autoload.php';
 // }
 
 use App\db;
-
 $conn = db::connect();
+
 ?>
 <?php require __DIR__ . '/../components/header.php'; ?>
 

@@ -1,29 +1,53 @@
 /* footer css start */
 #foot {
     width: 100%;
-    height: 450px;
     background-color: black;
 }
 
-#foot h4 {
+ .redline {
     color: white;
     position: relative;
     margin-bottom: 20px;
 }
 
-#foot  h4::after {
+  .redline::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
     width: 0%;
     height: 2px;
-    background-color: red;
+    background-color: rgb(255, 32, 32);
     transition: .5s;
 }
 
-#foot h4:hover::after {
+ .homenv:hover::after {
+    width: 100%;
+    color: rgb(255, 32, 32);
+
+}
+ .homenv {
+    color: rgb(255, 32, 32);
+
+}
+ .homenv:hover {
+    color: rgb(0, 0, 0);
+
+}
+ .about_h4:hover::after {
     width: 50%;
+
+}
+ .categ_h4:hover::after {
+    width: 61%;
+
+}
+ .info_h4:hover::after {
+    width: 70%;
+
+}
+ .serv_h4:hover::after {
+    width: 42%;
 
 }
 #foot  p {
@@ -55,7 +79,7 @@
     margin-bottom: 10px;
 }
 #foot input[type="search"] {
-    width: 70%;
+    width: 40%;
 }
 #foot form{
     margin-top: 15px;

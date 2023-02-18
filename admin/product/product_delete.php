@@ -9,7 +9,7 @@ $sql = "delete from `products` where id = '$id'";
 $result = $conn->query($sql);
 if($result){
     // echo "Deleted successfully";
-header('location:'.settings()['adminpage'].'/product/pdisplay.php');
+header('location:'.settings()['adminpage'].'/product/product_display.php');
 }else{
     die(mysqli_error($conn));
 }

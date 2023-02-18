@@ -1,12 +1,12 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-// if (session_status() === PHP_SESSION_NONE) {
-//     session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
 
-// }
-// if(!$_SESSION['loggedin']){
-//     header('location:login.php');
-// }
+}
+if(!$_SESSION['loggedin']){
+    header('location:login.php');
+}
 $page = "Product Details";
 
 ?>
@@ -78,6 +78,18 @@ require __DIR__ . '/components/header.php';
         top: 45%;
         z-index: 1;
     }
+    .buyicon a:hover{
+        color: white;
+        background-color: rgb(255, 32, 32) ;
+    }
+    .buyicon a{
+        border: 1px solid rgb(255, 32, 32);
+    color: rgb(255, 32, 32);
+    border-radius: 20px;
+    background-color: white ;
+    margin-left: 3px;
+    }
+    
 </style>
 </head>
 
@@ -85,7 +97,7 @@ require __DIR__ . '/components/header.php';
     <!-------- body start---- -->
     <!-- bodyheader  -->
     <?php
-    require __DIR__ . '/components/bodyheader.html';
+    require __DIR__ . '/components/bodyheader.php';
     ?>
     <!-- bodyheader  -->
     <!-- manubar -->
@@ -102,7 +114,7 @@ require __DIR__ . '/components/header.php';
             <div class=" row">
                 <div class="col-md-6">
                     <div class="border mainimg">
-                        <img src="<?= settings()['homepage'] ?>/productimg/63aaaceac28f1.png" width="100%" id="limg" alt="comming">
+                        <img src="<?= settings()['homepage'] ?>/productimg/63aaaceac28f1.png" width="100%" height="600px" id="limg" alt="comming">
                     </div>
                     <div class="row mt-2 mx-auto border position-relative">
 
@@ -133,16 +145,16 @@ require __DIR__ . '/components/header.php';
                     <p class="position-relative"><span class="position-absolute start-0 text-decoration-line-through text-danger">Price:$000 </span> <span class="position-absolute end-0">Discount Price:$000 </span></p>
                     <br><br>
                     <div class="buyicon ">
-                        <a class="color-bg px-3 py-1 fs-5 rounded" href="">
+                        <a class=" px-3 py-1 fs-5 rounded" href="">
                             <i class="fa-solid fa-cart-shopping "></i> Add to Chart
                         </a>
-                        <a class="bg-secondary-emphasis fs-5 text-secondary px-3 py-1 rounded shadow-lg" href="">
+                        <a class=" fs-5  px-3 py-1 rounded shadow-lg" href="">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
-                        <a class="bg-secondary-emphasis fs-5 text-secondary px-3 py-1 rounded shadow-lg" href="">
+                        <a class=" fs-5  px-3 py-1 rounded shadow-lg" href="">
                             <i class="fa-solid fs-5 fa-code-compare"></i>
                         </a>
-                        <a class="bg-secondary-emphasis fs-5 text-secondary px-3 py-1 rounded shadow-lg" href="">
+                        <a class="-emphasis fs-5  px-3 py-1 rounded shadow-lg" href="">
                             <i class="fa-solid fa-question"></i>
                         </a>
                     </div>
@@ -167,13 +179,19 @@ require __DIR__ . '/components/header.php';
         simg[0].onclick = function() {
             limg.src = simg[0].src;
             simg[0].style.filter = "blur(0px)";
+            simg[1].style.filter = "blur(3px)";
+            simg[2].style.filter = "blur(3px)";
         };
         simg[1].onclick = function() {
             limg.src = simg[1].src;
+            simg[0].style.filter = "blur(3px)";
             simg[1].style.filter = "blur(0px)";
+            simg[2].style.filter = "blur(3px)";
         };
         simg[2].onclick = function() {
             limg.src = simg[2].src;
+            simg[0].style.filter = "blur(3px)";
+            simg[1].style.filter = "blur(3px)";
             simg[2].style.filter = "blur(0px)";
         };
     </script>

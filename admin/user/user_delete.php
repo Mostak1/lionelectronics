@@ -4,19 +4,21 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require __DIR__ . '/../../vendor/autoload.php';
 
-// use App\auth\Admin;
-
-// if (!Admin::Check()) {
-//     header('HTTP/1.1 503 Service Unavailable');
-//     exit;
-// }
-
 use App\db;
 
 $conn = db::connect();
 ?>
-<?php require __DIR__ . '/../components/header.php'; ?>
-
+<?php
+$id = $_GET['deleteid'];
+$sql = "DELETE FROM `users` WHERE `id` = '$id'";
+$result = $conn->query($sql);
+if ($conn->affected_rows) {
+    header("location:" . settings()['homepage'] . "admin/user/udisplay.php");
+}
+?>
+<?php require __DIR__ . '/../components/header.php';
+//get records value and show in form
+?>
 </head>
 
 <body class="sb-nav-fixed">
@@ -24,52 +26,39 @@ $conn = db::connect();
     <div id="layoutSidenav">
         <?php require __DIR__ . '/../components/sidebar.php'; ?>
         <div id="layoutSidenav_content">
-            <!-------------------------- display content start--------------------------- -->
-            <div class="container">
-                <button class="btn btn-primary my-5">
-                    <a href="brand_add.php" class="text-decoration-none text-light"> Add Brand</a>
 
-                </button>
-                <table class="table">
+            <div class="container">
+                <!-- show value in table start -->
+                <h1 class="text-center text-primary">All Users</h1>
+                <table class="table table-primary table-striped table-hover ">
                     <thead>
                         <tr>
-                            <th scope="col">Sl</th>
+                            <th scope="col">SL</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Date</th>
-                            <th scope="col" colspan="2">Operations</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">role</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $sql = "select * from `brands` where 1";
-                        // $result = $con->query($sql);
+                        $sql = "select * from users where 1";
                         $result = $conn->query($sql);
-                        if ($result) {
-
-
-                            while ($row = $result->fetch_assoc()) {
-                                $id = $row['id'];
-                                $name = $row['name'];
-                                $date = $row['created_at'];
-                                echo '<tr>
-          <th scope="row">' . $id . '</th>
-          <td>' . $name . '</td>
-          <td>' . $date . '</td>
-            <td>
-                <a class=" btn btn-primary text-light text-decoration-none" href="brand_update.php?updateid=' . $id . '">Update</a>
-            </td>
-            <td>
-                <a class="btn btn-primary text-light text-decoration-none" href="brand_delete.php?deleteid=' . $id . '">Delete</a>
-          
-            </td>
-        </tr>';
-                            }
-                        }
-
+                        while ($row = $result->fetch_assoc()) {
                         ?>
-
+                            <tr>
+                                <th scope="row"><?= $row['id'] ?></th>
+                                <td><?= $row['name'] ?></td>
+                                <td><?= $row['email'] ?></td>
+                                <td><?= $row['password'] ?></td>
+                                <td><?= $row['role'] ?></td>
+                            </tr>
                     </tbody>
+                <?php
+                        }
+                ?>
                 </table>
+                <!-- show value in table end -->
             </div>
             <!-------------------------- display content end--------------------------- -->
 

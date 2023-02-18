@@ -63,10 +63,10 @@ $conn = db::connect();
           <td>' . $name . '</td>
           <td>' . $date . '</td>
             <td>
-                <a class=" btn btn-outline-primary  text-decoration-none" href="update.php?updateid=' . $id . '">Update</a>
+                <a class=" btn btn-outline-primary  text-decoration-none" href="image_update.php?updateid=' . $id . '">Update</a>
             </td>
             <td>
-                <a class="btn btn-outline-danger  text-decoration-none" href="delete.php?deleteid=' . $id . '">Delete</a>
+                <a class="btn btn-outline-danger  text-decoration-none" href="image_delete.php?deleteid=' . $id . '">Delete</a>
           
             </td>
         </tr>';
